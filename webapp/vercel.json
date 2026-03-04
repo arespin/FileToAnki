@@ -6,18 +6,26 @@
       "use": "@vercel/python"
     },
     {
-      "src": "public/**",
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/upload",
+      "dest": "/api/upload.py"
+    },
+    {
+      "src": "/api/extract",
+      "dest": "/api/extract.py"
+    },
+    {
+      "src": "/api/export",
+      "dest": "/api/export.py"
     },
     {
       "src": "/(.*)",
-      "dest": "/public/$1"
+      "dest": "/index.html"
     }
   ]
 }
