@@ -108,7 +108,7 @@ This project requires a Claude API key from Anthropic:
 3. Generate an API key
 4. Enter the key in the app when prompted
 
-Your API key is stored locally and never sent to any server other than Anthropic's API.
+**Privacy Note:** Your API key is stored locally in your browser's localStorage. When you extract flashcards, your key is sent securely over HTTPS to our server, which then forwards it to Anthropic's API. We do not store, log, or retain your API key on our servers.
 
 ## Project Structure
 

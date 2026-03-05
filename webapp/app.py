@@ -535,10 +535,18 @@ def extract():
         return jsonify({'error': 'No API key provided'}), 400
 
     try:
+        # Validate max_cards
+        max_cards = data.get('max_cards', 25)
+        try:
+            max_cards = int(max_cards)
+            max_cards = max(1, min(100, max_cards))  # Clamp between 1 and 100
+        except (TypeError, ValueError):
+            max_cards = 25
+
         flashcards = extract_flashcards(
             data['text'],
             data['api_key'],
-            max_cards=data.get('max_cards', 25)
+            max_cards=max_cards
         )
 
         return jsonify({
@@ -591,4 +599,4 @@ if __name__ == '__main__':
     print("\nPress Ctrl+C to stop the server")
     print("="*50 + "\n")
 
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    app.run(debug=False, host='0.0.0.0', port=8080)

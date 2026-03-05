@@ -91,10 +91,18 @@ class handler(BaseHTTPRequestHandler):
             return
 
         try:
+            # Validate max_cards
+            max_cards = data.get('max_cards', 25)
+            try:
+                max_cards = int(max_cards)
+                max_cards = max(1, min(100, max_cards))  # Clamp between 1 and 100
+            except (TypeError, ValueError):
+                max_cards = 25
+
             flashcards = extract_flashcards(
                 data['text'],
                 data['api_key'],
-                max_cards=data.get('max_cards', 25)
+                max_cards=max_cards
             )
 
             self.send_response(200)
