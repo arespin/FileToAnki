@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "webapp/api/*.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "webapp/index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/upload",
+      "dest": "/webapp/api/upload.py"
+    },
+    {
+      "src": "/api/extract",
+      "dest": "/webapp/api/extract.py"
+    },
+    {
+      "src": "/api/export",
+      "dest": "/webapp/api/export.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/webapp/index.html"
+    }
+  ]
+}
