@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# FileToAnki Web App Launcher
+# FileToFlashcards Web App Launcher
 # ===========================
 
 echo ""
 echo "======================================"
-echo "  FileToAnki Web App"
+echo "  FileToFlashcards Web App"
 echo "======================================"
 echo ""
 

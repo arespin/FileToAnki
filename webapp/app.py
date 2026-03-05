@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-FileToAnki Web App
+FileToFlashcards Web App
 A web application that extracts facts from uploaded files and converts them to Anki decks.
 """
 
@@ -593,7 +593,7 @@ def export():
 
 if __name__ == '__main__':
     print("\n" + "="*50)
-    print("FileToAnki Web App")
+    print("FileToFlashcards Web App")
     print("="*50)
     print("\nOpen http://localhost:8080 in your browser")
     print("\nPress Ctrl+C to stop the server")

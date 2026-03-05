@@ -50,3 +50,4 @@ DerivedData/
 webapp/uploads/*
 !webapp/uploads/.gitkeep
 *.apkg
+.vercel
